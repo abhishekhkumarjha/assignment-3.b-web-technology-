@@ -1,0 +1,353 @@
+<html>
+<head>
+    <title>SRM University AP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar, .main-content, .right-sidebar {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+        .sidebar {
+            flex: 1;
+            max-width: 200px;
+        }
+        .main-content {
+            flex: 3;
+            max-width: 600px;
+        }
+        .right-sidebar {
+            flex: 1;
+            max-width: 200px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d3d3d3;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #660099;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+        .header .location {
+            font-size: 24px;
+            color: #0044cc;
+        }
+        .header .actions {
+            display: flex;
+            align-items: center;
+        }
+        .header .actions a {
+            margin-left: 10px;
+            color: #0044cc;
+            text-decoration: none;
+        }
+        .header .actions a:hover {
+            text-decoration: underline;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .event-calendar {
+            margin: 10px 0;
+        }
+        .event-calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .event-calendar th, .event-calendar td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+        }
+        .event-calendar th {
+            background-color: #f0f0f0;
+        }
+        .event-calendar td a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+        .event-calendar td a:hover {
+            text-decoration: underline;
+        }
+        .event-calendar td.selected {
+            background-color: #d3d3d3;
+        }
+        .links {
+            margin: 10px 0;
+        }
+        .links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .links ul li {
+            margin: 5px 0;
+            color: #0044cc;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .category {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+        }
+        .category h3 {
+            font-size: 18px;
+            color: #0044cc;
+            margin: 0 0 10px 0;
+            text-align: center;
+            text-decoration: underline;
+            background-color: #d3d3d3;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            column-count: 2;
+        }
+        .category ul li {
+            margin: 5px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #0044cc;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .language-selector {
+            margin: 10px 0;
+        }
+        .language-selector select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar, .main-content, .right-sidebar {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarCells = document.querySelectorAll('.event-calendar td');
+            calendarCells.forEach(cell => {
+                cell.addEventListener('click', function() {
+                    calendarCells.forEach(c => c.classList.remove('selected'));
+                    cell.classList.add('selected');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>B. TECH CSE (BATCH 2023)</h1>
+        <div class="location">SRM University AP</div>
+        <div class="actions">
+            <a href="#">post</a>
+            <a href="#">acct</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#" class="post-ad"><i class="fas fa-edit"></i> post an ad</a>
+            <div class="search-box">
+                <input type="text" placeholder="search subject">
+            </div>
+            <div class="event-calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>T</th>
+                            <th>F</th>
+                            <th>S</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td class="selected">15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <div class="main-content">
+            <div class="categories">
+                <div class="category">
+                    <h3>SEMESTER-I</h3>
+                    <ul>
+                        <li>CALCULUS FOR ENGINEERS</li>
+                        <li>FUNDAMENTALS OF COMPUTING AND PROGRAMMING IN C</li>
+                        <li>EMERGING TECHNOLOGIES</li>
+                        <li>ANALYTICAL REASONING AND APTITUDE SKILLS</li>
+                        <li>ART OF LISTENING, SPEAKING AND READING SKILLS</li>
+                        <li>ENGINEERING PHYSICS</li>
+			<li>UNIVERSAL HUMAN VALUES AND ETHICS</li>
+                      </ul>
+                    <h3>SEMESTER-II</h3>
+                    <ul>
+                        <li>DATA STRUCTURES</li>
+                        <li>FOUNDATION OF ELECTRICAL AND ELECTRONICS ENGINEERING</li>
+                        <li>LINEAR ALGEBRA AND DIFFERENTIAL EQUATIONS</li>
+                        <li>ENTREPRENEURIAL MINDSET</li>
+                        <li>EFFECTIVE WRITING AND PRESENTATION SKILLS </li>
+                        <li>PRINCIPLES OF ECONOMICS AND MANAGEMENT</li>
+                        <li>ENVIRONMENTAL SCIENCE</li>
+                      </ul>
+                </div>
+                <div class="category">
+                    <h3>SEMESTER-III</h3>
+                    <ul>
+                        <li>DIGITAL ELECTRONICS</li>
+                        <li>PROBLEM SOLVING SKILLS</li>
+                        <li>DESIGN AND ANALYSIS OF ALGORITHMS</li>
+                        <li>DISCRETE MATHEMATICS</li>
+                        <li>OOPS WITH C++</li>
+                        <li>CODING SKILLS-I</li>
+                        <li>UNDERSTANDING OF MARKETS AND ECONOMY</li>
+                        <li>COMMUNITY SERVICE AND SOCIAL RESPONSIBILITY</li>
+                        <li>CO-CURRICULAR ACTIVITIES</li>
+                      
+                    </ul>
+                    <h3>SEMESTER-IV</h3>
+                    <ul>
+                        <li>HANDS ON WITH PYTHON</li>
+                        <li>CREATIVITY AND CRITICAL THINKING SKILLS</li>
+                        <li>CODING SKILLS-II</li>
+                        <li>DATABASE MANAGEMENT SYSTEMS</li>
+                        <li>WEB TECHNOLOGY</li>
+                        <li>PROBABILITY AND STATISTICS</li>
+                        <li>COMMUNITY SERVICE AND SOCIAL RESPONSIBILITY</li>
+                        <li>CO-CURRICULAR - E-CELL</li>
+                        <li>NATURAL RESOURCES</li>
+                        
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>SEMESTER-V</h3>
+                    <ul>
+                        <li>Career Skills-1</li>
+                        <li>Computer Networks </li>
+                        <li>Operating Systems </li>
+                        <li>Machine Learning </li>
+                        <li>Automata and Compilers 
+Design</li>
+                        <li>Computer Organization and 
+Architecture  </li>
+                        <li>Co-Curricular Activities  </li>
+                        <li>Community Engagement  </li>
+                        <li>OE/Minor - III</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="language-selector">
+                <select>
+                    <option value="english">english</option>
+                    <option value="hindi">hindi</option>
+                    <option value="telugu">telugu</option>
+                    <option value="tamil">tamil</option>
+                    <option value="kannada">kannada</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
